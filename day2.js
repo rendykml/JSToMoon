@@ -14,6 +14,11 @@ let a;
 a = 10;
 a++;
 
+let popped = rows.pop();
+
+
+console.log(popped);
+
 
 
 rows.push("freeCodeCamp")
