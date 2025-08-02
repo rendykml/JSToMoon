@@ -18,7 +18,11 @@ let popped = rows.pop();
 
 
 console.log(popped);
+let pushed = rows.push("freeCodeCamp");
+console.log(pushed);
 
+console.log(popped);
+console.log(rows);
 
 
 rows.push("freeCodeCamp")
