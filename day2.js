@@ -1,4 +1,3 @@
-let character = 'Hello';
 console.log(character);
 character = "World";
 let secondCharacter;
@@ -10,3 +9,8 @@ let rows = ["Naomi", "Quincy", "CamperChan"];
 console.log(rows[0]);
 
 console.log(secondCharacter);
+
+let a;
+a = 10;
+a++;
+document.getElementById("hasil").textContent = a; // Menampilkan hasil di halaman
