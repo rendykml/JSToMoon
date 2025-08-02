@@ -24,7 +24,7 @@ console.log(pushed);
 console.log(popped);
 console.log(rows);
 
-
+const well = "Hello";
 rows.push("freeCodeCamp")
 
 console.log(rows);
