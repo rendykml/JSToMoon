@@ -13,4 +13,9 @@ console.log(secondCharacter);
 let a;
 a = 10;
 a++;
-document.getElementById("hasil").textContent = a; // Menampilkan hasil di halaman
+
+
+
+rows.push("freeCodeCamp")
+
+console.log(rows);
