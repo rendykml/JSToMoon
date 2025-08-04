@@ -10,10 +10,10 @@ for (let i = 0; i < count; i = i + 1) {
   rows.push(character.repeat(i + 1))
 }
 
-function padRow() {
-    return "helloworld";
+function padRow(name) {
+    return name;
 }
 
 const call = padRow();
 console.log(call);
-padRow();
+padRow("rendy kamaluddin");
