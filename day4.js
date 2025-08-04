@@ -14,4 +14,6 @@ function padRow() {
     return "helloworld";
 }
 
+const call = padRow();
+console.log(call);
 padRow();
