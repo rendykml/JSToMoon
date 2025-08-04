@@ -17,3 +17,17 @@ function padRow(name) {
 const call = padRow();
 console.log(call);
 padRow("rendy kamaluddin");
+
+function pertambahan(angka, angka2) {
+    return angka + angka2;
+}
+
+pertambahan(1,2);
+
+const nama_depan = "rendy";
+
+function rendyKamaluddin(nama_belakang){
+    return nama_depan + nama_belakang;
+}
+
+console.log(rendyKamaluddin(" kamaluddin"));
