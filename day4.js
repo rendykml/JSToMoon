@@ -30,4 +30,6 @@ function rendyKamaluddin(nama_belakang){
     return nama_depan + nama_belakang;
 }
 
-console.log(rendyKamaluddin(" kamaluddin"));
+let panggilNama = rendyKamaluddin(" Kamaluddin")
+
+console.log(panggilNama);
