@@ -27,9 +27,9 @@ pertambahan(1,2);
 const nama_depan = "rendy";
 
 function rendyKamaluddin(nama_belakang){
-    return nama_depan + nama_belakang;
+    return nama_depan + " " + nama_belakang;
 }
 
-let panggilNama = rendyKamaluddin(" Kamaluddin")
+let panggilNama = rendyKamaluddin("Kamaluddin")
 
 console.log(panggilNama);
