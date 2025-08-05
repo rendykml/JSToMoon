@@ -3,6 +3,8 @@ const character = "#";
 const count = 8;
 const rows = [];
 
+//fungsi 1
+
 for (let i = 0; i < count; i = i + 1) {
   rows.push(character.repeat(i))
 }
