@@ -33,4 +33,4 @@ function padRow(rowNumber) {
 }
 
 padRow();
-character.repeat(3); // menghasilkan "***"
+character.repeat(3); // menghasilkan output "***"
