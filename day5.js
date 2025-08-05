@@ -23,5 +23,8 @@ function padRow(name) {
   console.log("This works!");
   return test; //menyetopkan nilai test ke variabel yang memanggil fungsi ini
   console.log("This works!");//funsi ini tidak akan pernah dieksekusi karena sudah ada return sebelumnya
+}
+
+function padRow(rowNumber, rowCount) {
 
 }
