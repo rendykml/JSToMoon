@@ -33,6 +33,8 @@ pertambahan(1,2);
 
 const nama_depan = "rendy";
 
+
+//funsi4
 function rendyKamaluddin(nama_belakang){
     return nama_depan + " " + nama_belakang;
 }
