@@ -23,6 +23,8 @@ const call = padRow();
 console.log(call);
 padRow("rendy kamaluddin");
 
+
+//funsi3
 function pertambahan(angka, angka2) {
     return angka + angka2;
 }
