@@ -30,7 +30,7 @@ function padRow(rowNumber) {
   let rowNumber = 3;
   let stars = "*".repeat(rowNumber); // menjadi "*".repeat(3)
   console.log(stars); // Output: ***  
-  rowNumber.repeat(3);
+
   return rowNumber;
 }
 
