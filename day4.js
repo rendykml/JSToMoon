@@ -9,6 +9,8 @@ for (let i = 0; i < count; i = i + 1) {
   rows.push(character.repeat(i))
 }
 
+
+//fungsi2
 for (let i = 0; i < count; i = i + 1) {
   rows.push(character.repeat(i + 1))
 }
