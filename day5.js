@@ -25,6 +25,13 @@ function padRow(name) {
   console.log("This works!");//funsi ini tidak akan pernah dieksekusi karena sudah ada return sebelumnya
 }
 
-function padRow(rowNumber, rowCount) {
 
+function padRow(rowNumber) {
+  let rowNumber = 3;
+  let stars = "*".repeat(rowNumber); // menjadi "*".repeat(3)
+  console.log(stars); // Output: ***  
+  rowNumber.repeat(3);
+  return rowNumber;
 }
+
+padRow();
