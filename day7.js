@@ -15,6 +15,9 @@ for (let i = 1; i <= count; i++) {
   rows.push(padRow(i, count));
 }
 */
+  if (true) {
+    console.log("Condition is true");
+  }
 
   if (false) {
     console.log("Condition is true");
