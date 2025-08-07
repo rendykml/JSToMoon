@@ -22,3 +22,6 @@ for (let i = 1; i <= count; i++) {
   if (false) {
     console.log("Condition is true");
   }
+  if ("") {
+  console.log("Condition is true");
+}
