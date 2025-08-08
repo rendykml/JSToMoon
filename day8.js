@@ -36,3 +36,10 @@ while (continueLoop) {
 
   }
 }
+while (continueLoop) {
+  done++;
+  rows.push(padRow(done, count));
+  if (done === count) {
+    continueLoop = false;
+  } 
+}
