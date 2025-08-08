@@ -19,3 +19,8 @@ let done = 0;
 while (continueLoop){
   
 }
+
+while (continueLoop) {
+  done++;
+
+}
