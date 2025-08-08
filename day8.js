@@ -51,3 +51,9 @@ while (done !== count) {
     continueLoop = false;
   } 
 }
+
+while (done !== count ){
+    done++;
+    rows.push(padRow(done, count))
+}
+let dones = 0;
