@@ -24,3 +24,9 @@ while (continueLoop) {
   done++;
 
 }
+while (continueLoop) {
+  done++;
+  if (done == count){
+
+  }
+}
