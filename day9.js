@@ -9,6 +9,8 @@ for (let i = count; i > 0 ; i--){
 }
 
 const numbers = [1, 2, 3];
+const shifted = numbers.shift();
 const unshifted = numbers.unshift(5);
-console.log(numbers);
 console.log(unshifted);
+console.log(numbers);
+console.log(shifted)
