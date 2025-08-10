@@ -14,3 +14,9 @@ const unshifted = numbers.unshift(5);
 console.log(unshifted);
 console.log(numbers);
 console.log(shifted)
+
+
+for (let i = 1; i <= count; i++) {
+
+  rows.unshift(padRow(i, count));
+}
