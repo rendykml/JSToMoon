@@ -47,3 +47,26 @@ function hasPassingGrade(score) {
 console.log(hasPassingGrade(100));
 console.log(hasPassingGrade(53));
 console.log(hasPassingGrade(87));
+
+function hasPassingGrade(score) {
+ 
+  let ambilGrade = getGrade(score);
+  let lulus = true;
+
+
+  if (ambilGrade === "F"){
+    lulus = false;
+  }
+  
+  if (lulus === true){
+    return "anda lulus";
+  } else if (lulus === false) {
+    return "anda tidak lulus" 
+  }
+  return lulus
+}
+
+
+console.log(hasPassingGrade(100));
+console.log(hasPassingGrade(53));
+console.log(hasPassingGrade(87));
