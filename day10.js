@@ -1,5 +1,6 @@
-function getAverage(scores) {
-  let sum = 0;
+function getAverage(scores)  { // Function to calculate the average of an array of scores
+  if (scores.length === 0) return 0; // Handle empty array case
+  let sum = 0; 
   let pembagi = scores.length;
   for(let i = 0; i < pembagi; i++){
     sum = sum + scores[i];
