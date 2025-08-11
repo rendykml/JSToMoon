@@ -26,3 +26,24 @@ function getGrade(score) { // Function to determine the grade based on the score
     return "F";
   }
 }
+function hasPassingGrade(score) {
+ 
+  let nilai = getGrade(score);
+
+
+  if (nilai === "A"){
+    lulus = false;
+  }
+  
+  if (lulus){
+    return "anda lulus";
+  } else {
+    return "anda tidak lulus" 
+  }
+
+}
+
+
+console.log(hasPassingGrade(100));
+console.log(hasPassingGrade(53));
+console.log(hasPassingGrade(87));
