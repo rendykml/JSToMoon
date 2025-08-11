@@ -11,7 +11,7 @@ function getAverage(scores)  { // Function to calculate the average of an array 
 console.log(getAverage([92, 88, 12, 77, 57, 100, 67, 38, 97, 89]));
 console.log(getAverage([45, 87, 98, 100, 86, 94, 67, 88, 94, 95]))
 
-function getGrade(score) {
+function getGrade(score) { // Function to determine the grade based on the score
   if (score === 100) {
     return "A++";
   } else if (score >= 90) {
