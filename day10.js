@@ -49,6 +49,7 @@ console.log(hasPassingGrade(53));
 console.log(hasPassingGrade(87));
 
 function hasPassingGrade(score) {
+    // Function to check if the score is a passing grade
     let ambilNilai = getGrade(score);
     let lulus = true;
     if (ambilNilai === "F"){
