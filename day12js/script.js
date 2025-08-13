@@ -3,3 +3,5 @@ let health = 100;
 let gold = 50;
 let currentWeaponIndex = 0;
 let fighting;
+
+let button1 = document.querySelector("#button1");
