@@ -10,6 +10,7 @@ for (let i = 0; i < count; i = i + 1) {
 }
 
 for (const row of rows){
+  // This code iterates over each element in the `rows` array and logs it to the console.
     result = result  + row + "\n";
 }
 
