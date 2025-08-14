@@ -18,7 +18,9 @@ let popped = rows.pop();
 
 
 console.log(popped);
-let pushed = rows.push("freeCodeCamp");
+// console.log(rows[0]);
+let pushed = rows.push("freeCodeCamp");// push returns the new length of the array
+
 console.log(pushed);
 
 console.log(popped);
