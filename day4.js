@@ -36,6 +36,7 @@ const nama_depan = "rendy";
 
 //funsi4
 function rendyKamaluddin(nama_belakang){
+  // Menggabungkan nama depan dan nama belakang
     return nama_depan + " " + nama_belakang;
 }
 
