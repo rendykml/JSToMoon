@@ -16,12 +16,14 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
-const locations = [{
-  name: "town square",
-  "button text": ["Go to store", "Go to cave", "Fight dragon" ]
-}
+const locations = [
+  {
+    "button funtions" : [button1.onclick, ],
+    name: "town square",
+    "button text": ["Go to store", "Go to cave", "Fight dragon"],
+    "button functions" : [goStore, goCave, fightDragon]
+  }
 ];
-
 
 // initialize buttons
 button1.onclick = goStore;
