@@ -65,7 +65,6 @@ function goStore() {
 }
 function goCave() {
   update(locations[2]);
-
 }
 
 function fightDragon() {
@@ -73,10 +72,12 @@ function fightDragon() {
 }
 
 function buyHealth() {
-  gold -=  10;
-  health += 10;
-  healthText.innerText = health;
-  goldText.innerText = gold;
+  if (gold >= 10) {
+    gold -= 10;
+    health += 10;
+    goldText.innerText = gold;
+    healthText.innerText = health;
+  }
 }
 
 function buyWeapon() {}
