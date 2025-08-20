@@ -78,7 +78,7 @@ function buyHealth() {
     goldText.innerText = gold;
     healthText.innerText = health;
   }else {
-    console.log ("you dont have enough money")
+    text.innerText = "You do not have enough gold to buy health.";
   }
 }
 
