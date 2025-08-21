@@ -57,12 +57,12 @@ const locations = [
     "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
     "button functions": [fightSlime, fightBeast, goTown],
     text: "You enter the cave. You see some monsters."
-  }, {
+  },
+  {
     name: "fight",
     "button text": ["Attack", "Dodge", "Run"],
     "button functions": [attack, dodge, goTown],
     text: "You are fighting a monster."
-
   }
 ];
 
@@ -152,7 +152,10 @@ function fightDragon() {
 }
 
 function goFight() {
-
+  update(locations[3]);
+  monsterHealthText.innerText = monsters[fighting].health;
+  monsterName.innerText = monsters[fighting].name
+  monsterStats.style.display = "block";
 }
 
 function attack() {
