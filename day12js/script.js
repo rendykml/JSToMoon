@@ -194,7 +194,7 @@ function attack() {
     } else {
       defeatMonster();
     }
-    if (Math.random() <= .2) {
+    if (Math.random() <= .1) {
 
   }
   }
