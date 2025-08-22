@@ -111,6 +111,9 @@ function goStore() {
 function goCave() {
   update(locations[2]);
 }
+function easterEgg(){
+  update(locations[7]);
+}
 
 function buyHealth() {
   if (gold >= 10) {
