@@ -195,7 +195,7 @@ function attack() {
       defeatMonster();
     }
     if (Math.random() <= .1) {
-      text.innerText += " Your " + inventory.pop() + " breaks."
+      text.innerText += " Yours " + inventory.pop() + " breaks."
   }
   }
    if(isMonsterHit()){
