@@ -111,9 +111,6 @@ function goStore() {
 function goCave() {
   update(locations[2]);
 }
-function easterEgg(){
-  update(locations[7]);
-}
 
 function buyHealth() {
   if (gold >= 10) {
@@ -185,8 +182,11 @@ function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
   text.innerText += " You attack it with your " + weapons[currentWeaponIndex].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
-  
- 
+  if (isMonsterHit()) {
+    monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;    
+  } else {
+    text.innerText += " You miss.";
+  }
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
   if (health <= 0) {
@@ -197,17 +197,11 @@ function attack() {
     } else {
       defeatMonster();
     }
-    if (Math.random() <= .1 && inventory.length !== 1) {
-      text.innerText += " Your " + inventory.pop() + " breaks.";
-      currentWeaponIndex--;
   }
+  if (Math.random() <= .1 && inventory.length !== 1) {
+    text.innerText += " Your " + inventory.pop() + " breaks.";
+    currentWeaponIndex--;
   }
-   if(isMonsterHit()){
-    monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;
-  } else {
-    text.innerText += " You miss.";
-  }
-  
 }
 
 function getMonsterAttackValue(level) {
@@ -215,8 +209,9 @@ function getMonsterAttackValue(level) {
   console.log(hit);
   return hit > 0 ? hit : 0;
 }
+
 function isMonsterHit() {
-  return Math.random() > .2 || health < 20;;
+  return Math.random() > .2 || health < 20;
 }
 
 function dodge() {
@@ -249,4 +244,19 @@ function restart() {
   healthText.innerText = health;
   xpText.innerText = xp;
   goTown();
+}
+
+function easterEgg() {
+  update(locations[7]);
+}
+
+function pickTwo(){
+  pick(2);
+}
+function pickEight(){
+  pick(8);
+}
+
+function pick(guess) {
+
 }
