@@ -267,6 +267,6 @@ function pickEight() {
 function pick(guess) {
   const numbers = [];
   while (numbers.length < 10) {
-    Math.floor(Math.random() * 11)
+    numbers.push(Math.floor(Math.random() * 11))
   }
 }
