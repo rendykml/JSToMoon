@@ -10,6 +10,7 @@ const darkColorsArr = [
   "#2C3E50",
   "#800020",
 ];
+
 function getRandomIndex() {
   const randomIndex = Math.floor(darkColorsArr.length * Math.random());
   return randomIndex;
@@ -18,5 +19,10 @@ function getRandomIndex() {
 const body = document.querySelector("body");
 const bgHexCodeSpanElement = document.querySelector("#bg-hex-code");
 
+function changeBackgroundColor() {
+  const color = darkColorsArr[getRandomIndex()];
 
-console.log(bgHexCodeSpanElement);
+  bgHexCodeSpanElement.innerText = color;
+  body.style.backgroundColor = color;
+}
+changeBackgroundColor();
