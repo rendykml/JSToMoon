@@ -41,9 +41,11 @@ function getCaloriesFromInputs(list) {
 
     if (invalidInputMatch) {
       alert(`Invalid Input: ${invalidInputMatch[0]}`);
-      isError=true
-      return null
+      isError = true;
+      return null;
     }
+    calories += Number(currVal);
+
   }
 }
 
