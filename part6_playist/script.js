@@ -81,7 +81,12 @@ const allSongs = [
 const audio = new Audio();
 let userData = {
   songs: [...allSongs],
-
+  currentSong: null,
+  songCurrentTime: 0,
 };
 
-console.log(userData)
+const printGreeting = () => {
+  console.log('Hello there!'); 
+}
+
+printGreeting();
