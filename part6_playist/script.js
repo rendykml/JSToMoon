@@ -143,6 +143,10 @@ const shuffle = () => {
   setPlayButtonAccessibleText();
 };
 
+const deleteSong = (id) => {
+  userData.songs = userData?.songs.filter((song)=> song.id !== id);
+};
+
 const setPlayerDisplay = () => {
   const playingSong = document.getElementById("player-song-title");
   const songArtist = document.getElementById("player-song-artist");
@@ -213,7 +217,7 @@ nextButton.addEventListener("click", playNextSong);
 
 previousButton.addEventListener("click", playPreviousSong);
 
-shuffleButton.addEventListener("click", shuffle)
+shuffleButton.addEventListener("click", shuffle);
 
 const sortSongs = () => {
   userData?.songs.sort((a,b) => {
