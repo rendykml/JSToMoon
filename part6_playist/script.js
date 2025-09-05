@@ -99,6 +99,7 @@ const playSong = (id) => {
   playButton.classList.add("playing");
 
   highlightCurrentSong();
+  setPlayerDisplay();
   audio.play();
 };
 
@@ -134,7 +135,10 @@ const setPlayerDisplay = () => {
   const playingSong = document.getElementById("player-song-title");
   const songArtist = document.getElementById("player-song-artist");
   const currentTitle = userData?.currentSong?.title;
-  const currentArtist = userData?.currentSong?.artist;  
+  const currentArtist = userData?.currentSong?.artist;
+
+  playingSong.textContent = currentTitle ? currentTitle : "";
+  songArtist.textContent = currentArtist ? currentArtist : "";
 };
 
 const highlightCurrentSong = () => {
@@ -170,6 +174,10 @@ const renderSongs = (array) => {
     .join("");
 
   playlistSongs.innerHTML = songsHTML;
+};
+
+const setPlayButtonAccessibleText = () => {
+  const song = userData?.currentSong || userData?.songs[0] ;
 };
 
 const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
