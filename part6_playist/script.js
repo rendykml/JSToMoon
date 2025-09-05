@@ -136,6 +136,11 @@ const shuffle = () => {
   userData?.songs.sort(() => Math.random() - 0.5);
   userData.currentSong = null;
   userData.songCurrentTime = 0;
+
+  renderSongs(userData?.songs);
+  pauseSong();
+  setPlayerDisplay();
+  setPlayButtonAccessibleText();
 };
 
 const setPlayerDisplay = () => {
@@ -207,6 +212,8 @@ pauseButton.addEventListener("click",  pauseSong);
 nextButton.addEventListener("click", playNextSong);
 
 previousButton.addEventListener("click", playPreviousSong);
+
+shuffleButton.addEventListener("click", shuffle)
 
 const sortSongs = () => {
   userData?.songs.sort((a,b) => {
