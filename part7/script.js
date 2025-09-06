@@ -5,7 +5,7 @@ const textInput = document.getElementById('text-input');
 
 
 function cleanInputString(str) {
-  const regex = /[+-\s]/g;
+  const regex = /[+-_\s]/g;
   return str.replace(regex, '');
 }
 
