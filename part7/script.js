@@ -44,7 +44,7 @@ const outputResult = (str)=> {
 reset.addEventListener('click', clearInput);
 
 chekBtn.addEventListener('click', () => {
-    clearInput();
+    
     const inputValue = input.value;
     console.log(chekPalindrome(inputValue));
     textInput.textContent = outputResult(inputValue);
