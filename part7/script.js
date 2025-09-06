@@ -1,14 +1,15 @@
-const input = document.getElementById('inputText');
+const input = document.getElementById("text-input");
 const chekBtn = document.getElementById('check-btn');
 const result = document.getElementById('result');
-const textInput = document.getElementById('text-input');
+// const textInput = document.getElementById('text-input');
 const reset = document.getElementById('resetButton');
 
 
 const cleanInputString = (str) => {
-  const regex = /[+-_\s]/g;
-  return str.replace(regex, '');
+    const regex = /[_.,+-\s]/g;
+ return str.toLowerCase().replace(regex, "");
 }
+
 
 const chekPalindrome = (str) => {
    
@@ -29,7 +30,7 @@ const outputResult = (str)=> {
         return result.textContent = `${hasilInput} is a palindrome`
     } else if (chekPalindrome(cleanInputString(input.value)) === ''){
         result.style.color = 'red';
-        al
+        console.log(alert('Please input a value'))
         return result.textContent = 'Please input a value'
     } else if(!chekPalindrome(clearInput)){
         result.style.color = 'orange';
@@ -44,7 +45,9 @@ reset.addEventListener('click', clearInput);
 chekBtn.addEventListener('click', () => {
     const inputValue = input.value;
     console.log(chekPalindrome(inputValue));
-    textInput.textContent = outputResult(inputValue);
+    result.textContent = outputResult(inputValue)
+    console.log(input.value);
+    console.log(cleanInputString(input.value))
 });
 
 
