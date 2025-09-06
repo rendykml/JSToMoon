@@ -1,4 +1,4 @@
-const input = document.getElementById("text-input");
+const input = document.getElementById('text-input');
 const chekBtn = document.getElementById('check-btn');
 const result = document.getElementById('result');
 // const textInput = document.getElementById('text-input');
@@ -6,7 +6,7 @@ const reset = document.getElementById('resetButton');
 
 
 const cleanInputString = (str) => {
-    const regex = /[_.,+-\s]/g;
+    const regex = /[_\/.:,)(+-\s]/g;
  return str.toLowerCase().replace(regex, "");
 }
 
