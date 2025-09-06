@@ -2,6 +2,7 @@ const input = document.getElementById('inputText');
 const chekBtn = document.getElementById('check-btn');
 const result = document.getElementById('result');
 const textInput = document.getElementById('text-input');
+const reset = document.getElementById('resetButton');
 
 
 function cleanInputString(str) {
@@ -14,6 +15,13 @@ const chekPalindrome = (str) => {
     const reversedStr = cleanInputString(str.split('').reverse().join(''));
      if (str === '') return '';
     return str === reversedStr;
+}
+
+const clearInput = () => {
+    input.value = '';
+    result.textContent = '';
+    textInput.textContent = '';
+    textInput.style.color = '';
 }
 
 const outputResult = (str)=> {
@@ -33,10 +41,13 @@ const outputResult = (str)=> {
     }
 }
 
+reset.addEventListener('click', clearInput);
+
 chekBtn.addEventListener('click', () => {
-  
+    clearInput();
     const inputValue = input.value;
     console.log(chekPalindrome(inputValue));
     textInput.textContent = outputResult(inputValue);
 });
+
 
