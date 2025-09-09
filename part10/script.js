@@ -13,33 +13,7 @@ const descriptionInput = document.getElementById("description-input");
 const taskData = [];
 let currentTask = {};
 
-const reset = () => {
-  titleInput.value = "";
-  dateInput.value = "";
-  descriptionInput.value = "";
-  taskForm.classList.toggle("hidden");
-  currentTask = {};
-}
-
-openTaskFormBtn.addEventListener("click", () =>
-  taskForm.classList.toggle("hidden")
-);
-
-closeTaskFormBtn.addEventListener("click", () => {
-  confirmCloseDialog.showModal();
-});
-
-cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
-
-discardBtn.addEventListener("click", () => {
-  confirmCloseDialog.close();
-  reset();
-});
-
-
-taskForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
+const addOrUpdateTask = () => {
   const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
   const taskObj = {
     id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
@@ -48,10 +22,15 @@ taskForm.addEventListener("submit", (e) => {
     description: descriptionInput.value,
   };
 
-   if (dataArrIndex === -1) {
+  if (dataArrIndex === -1) {
     taskData.unshift(taskObj);
   }
+  
+  updateTaskContainer()
+  reset()
+};
 
+const updateTaskContainer = () => {
   taskData.forEach(
     ({ id, title, date, description }) => {
         tasksContainer.innerHTML += `
@@ -65,6 +44,38 @@ taskForm.addEventListener("submit", (e) => {
       `
     }
   );
+};
+
+const reset = () => {
+  titleInput.value = "";
+  dateInput.value = "";
+  descriptionInput.value = "";
+  taskForm.classList.toggle("hidden");
+  currentTask = {};
+}
+
+openTaskFormBtn.addEventListener("click", () =>
+  taskForm.classList.toggle("hidden")
+);
+
+closeTaskFormBtn.addEventListener("click", () => {
+  const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
+  if (formInputsContainValues) {
+    confirmCloseDialog.showModal();
+  } else {
+    reset();
+  }
+});
+
+cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
+
+discardBtn.addEventListener("click", () => {
+  confirmCloseDialog.close();
+  reset()
+});
+
+taskForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
   reset()
 });
