@@ -6,8 +6,8 @@ const decimalToBinary = (input) => {
   let binary = "";
 
   while (input > 0) {
-   input = Math.floor(input /2)
- 
+    binary = (input % 2) + binary;
+    input = Math.floor(input / 2);
   }
 
   result.innerText = binary;
