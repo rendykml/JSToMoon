@@ -3,16 +3,16 @@ const convertBtn = document.getElementById("convert-btn");
 const result = document.getElementById("result");
 
 const decimalToBinary = (input) => {
-  console.log(input)
   if (input === 0) {
-    return "";
-  } else {
-    return decimalToBinary(Math.floor(input / 2) ) + (input % 2)
-    
-
+    return "0";
+  } else if (input === 1){
+    return "1";
+  }
+  
+  else {
+    return decimalToBinary(Math.floor(input / 2)) + (input % 2);
   }
 };
-console.log(decimalToBinary(3))
 
 const checkUserInput = () => {
   if (
@@ -24,7 +24,7 @@ const checkUserInput = () => {
     return;
   }
 
-  decimalToBinary(parseInt(numberInput.value));
+  result.textContent = decimalToBinary(parseInt(numberInput.value));
   numberInput.value = "";
 };
 
