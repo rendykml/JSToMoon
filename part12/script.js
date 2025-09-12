@@ -5,16 +5,26 @@ const result = document.getElementById('output')
 
 const resultNumber = (input)=>{
 
-  if(input === 0 || input ===1){
-    return "selesai"
-  }else if (resultNumber(input) >= 9){
-    return retultNumber((input/9) + "IX")
+
+  if(input === 1000){
+    return + "M"
+  }else if(input >= 40){
+    return resultNumber(input - 40) + "LX"
+  } else if (input >= 10){
+    return resultNumber(input - 10)  + "X"
+  } else if (input === 9){
+    return resultNumber(input - 9) + "IX"
+  }else if (input >= 5){
+    return resultNumber(input - 5) + "V"
   } else if(input === 4){
-    return "IV"
-  } else if (input === 40){
-    return "XL"
+    return resultNumber(input-4)+ "IV"
+  } else if(input >= 1){
+    return resultNumber(input-1 )+ "I"
+  } else if (input === 0){
+    return ""
+  } else{
+    return input
   }
-  return input
 }
 
 
@@ -26,10 +36,11 @@ const checkResultNumber = ()=>{
     result.textContent = "Please enter a valid number"
   } else if(inputInt >= 4000){
     result.textContent = "Please enter a number less than or equal to 3999"
-  } else if (inputInt <= 0){
+  } else if (inputInt < 0){
     result.textContent = "Please enter a number greater than or equal to 1"
   } else{
-    result.textContent = resultNumber(inputInt)
+    result.textContent = resultNumber(inputInt).split("").reverse().join("")
+    numberInput.value = "";
   }
 
 
@@ -37,5 +48,7 @@ const checkResultNumber = ()=>{
 }
 
 
-convertBtn.addEventListener("click", checkResultNumber
+convertBtn.addEventListener("click", ()=>{
+  checkResultNumber()
+}
 )
