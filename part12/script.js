@@ -3,21 +3,23 @@ const convertBtn = document.getElementById("convert-btn");
 const result = document.getElementById("output");
 
 const resultNumber = (input) => {
-  if (input === 1000) {
-    return "M";
-  }else if(input >= 400){
-    return "CD" + resultNumber(input - 400)
-    }else if (input >=100){
-    return "C" + resultNumber(input - 100)
-    }else if(input >=90){
-    return "XC" + resultNumber(input-90)
-  }else if(input >= 50 ){
-    return "L" + resultNumber(input - 50)
-  }
-  else if(input >= 40){
-    return "XL" + resultNumber(input-40)
-  } 
-  else if (input >= 10) {
+  if (input >= 1000) {
+    return "M" + resultNumber(input - 1000);
+  }else if (input >= 900) {
+    return "CM" + resultNumber(input - 900);
+  }else if (input >= 500) {
+    return "D" + resultNumber(input - 500);
+  } else if (input >= 400) {
+    return "CD" + resultNumber(input - 400);
+  } else if (input >= 100) {
+    return "C" + resultNumber(input - 100);
+  } else if (input >= 90) {
+    return "XC" + resultNumber(input - 90);
+  } else if (input >= 50) {
+    return "L" + resultNumber(input - 50);
+  } else if (input >= 40) {
+    return "XL" + resultNumber(input - 40);
+  } else if (input >= 10) {
     return "X" + resultNumber(input - 10);
   } else if (input === 9) {
     return "IX";
@@ -42,8 +44,8 @@ const checkResultNumber = () => {
   } else if (inputInt < 0) {
     result.textContent = "Please enter a number greater than or equal to 1";
   } else {
-    result.textContent = resultNumber(inputInt).split("").reverse().join("");
-    numberInput.value = "";
+    result.textContent = resultNumber(inputInt)
+    inputNumber.value = "";
   }
 };
 
