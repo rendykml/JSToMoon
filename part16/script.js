@@ -38,7 +38,9 @@ const applyFunction = str => {
   const str2 = infixEval(noHigh, infix);
   const functionCall = /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i;
   const toNumberList = args => args.split(",").map(parseFloat);
-  const apply = (fn, args) => spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));;
+  const apply = (fn, args) => spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
+  return str2.replace(functionCall, ()=>{})
+
 }
 
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
