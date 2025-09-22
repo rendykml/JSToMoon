@@ -10,8 +10,7 @@ const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, ar
 const highPrecedence = str => {
   const regex = /([\d.]+)([*\/])([\d.]+)/;
   const str2 = infixEval(str, regex);
-  return str2 === str ? str : highPrecedence(str2)
-
+  return str === str2 ? str : highPrecedence(str2);
 }
 
 const isEven = num => num % 2 === 0;
@@ -31,6 +30,11 @@ const spreadsheetFunctions = {
   sum,
   average,
   median
+}
+
+const applyFunction = str => {
+  const noHigh = highPrecedence(str);
+  const infix = /([\d.]+)([+-])([\d.]+)/;
 }
 
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
