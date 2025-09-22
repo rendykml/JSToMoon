@@ -9,9 +9,10 @@ const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, ar
 
 const highPrecedence = str => {
   const regex = /([\d.]+)([*\/])([\d.]+)/;
-  return regex.test(str);
+  const str2 = infixEval(str, regex);
+  return str2 === str ? str : highPrecedence(str2)
+
 }
-console.log(highPrecedence("5*3"));
 
 const isEven = num => num % 2 === 0;
 const sum = nums => nums.reduce((acc, el) => acc + el, 0);
