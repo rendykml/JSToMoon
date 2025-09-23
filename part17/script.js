@@ -5,10 +5,7 @@ const result =document.getElementById("results-div")
 
 const regex1 = /^(1[\s])?(\d{3}|1?\(\d{3}\))[-\s]?\d{3}[-\s]?\d{4}$/;
 
-
-const validList = [regex1]
-
-const isValid = (input) => validList.some((regex)=>regex.test(input))
+const isValid = (input) => regex1.test(input)
 
 checkBtn.addEventListener("click" , ()=>{
   if(inputUser.value === ""){
@@ -19,5 +16,5 @@ checkBtn.addEventListener("click" , ()=>{
   result.textContent = isValid(inputUser.value) ? `Valid US number: ${inputUser.value}`: `Invalid US number: ${inputUser.value}`
 })
 
-clearBtn.addEventListener("click", ()=>result.textContent = "")
+clearBtn.onclick = () => result.textContent = ""
 
