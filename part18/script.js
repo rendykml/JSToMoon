@@ -115,7 +115,12 @@ class ShoppingCart {
 
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
-      totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) +1
+      totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1;
     })
+
+    const currentProductCount = totalCountPerProduct[product.id];
+    const currentProductCountSpan = document.getElementById(`product-count-for-id${id}`);
+
+    currentProductCount > 1 ? undefined : undefined;
   }
 };
