@@ -85,9 +85,8 @@ const products = [
   },
 ];
 
-products.forEach(
-  ({ name, id, price, category }) => {
-    dessertCards.innerHTML += `
+products.forEach(({ name, id, price, category }) => {
+  dessertCards.innerHTML += `
       <div class="dessert-card">
         <h2>${name}</h2>
         <p class="dessert-price">$${price}</p>
@@ -98,8 +97,7 @@ products.forEach(
         </button>
       </div>
     `;
-  }
-);
+});
 
 class ShoppingCart {
   constructor() {
@@ -115,22 +113,25 @@ class ShoppingCart {
 
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
-      totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1;
-    })
+      totalCountPerProduct[dessert.id] =
+        (totalCountPerProduct[dessert.id] || 0) + 1;
+    });
 
     const currentProductCount = totalCountPerProduct[product.id];
-    const currentProductCountSpan = document.getElementById(`product-count-for-id${id}`);
+    const currentProductCountSpan = document.getElementById(
+      `product-count-for-id${id}`
+    );
 
-    currentProductCount > 1 
-      ? currentProductCountSpan.textContent = `${currentProductCount}x`
-      : productsContainer.innerHTML += `
+    currentProductCount > 1
+      ? (currentProductCountSpan.textContent = `${currentProductCount}x`)
+      : (productsContainer.innerHTML += `
       <div id="dessert${id}" class="product">
         <p>
           <span class="product-count" id="product-count-for-id${id}"></span>${name}
         </p>
         <p>${price}</p>
       </div>
-      `;
+      `);
   }
 
   getCounts() {
@@ -144,21 +145,18 @@ class ShoppingCart {
   calculateTotal() {
     const subTotal = this.items.reduce((total, item) => total + item.price, 0);
     const tax = this.calculateTaxes(subTotal);
-
   }
-};
+}
 
 const cart = new ShoppingCart();
 const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
 
-[...addToCartBtns].forEach(
-  (btn) => {
-    btn.addEventListener("click", (event) => {
-      cart.addItem(Number(event.target.id), products);
-      totalNumberOfItems.textContent = cart.getCounts();
-    })
-  }
-);
+[...addToCartBtns].forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    cart.addItem(Number(event.target.id), products);
+    totalNumberOfItems.textContent = cart.getCounts();
+  });
+});
 
 cartBtn.addEventListener("click", () => {
   isCartShowing = !isCartShowing;
