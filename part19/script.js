@@ -56,7 +56,6 @@ class Player {
   }
 }
 
-
 class Platform {
   constructor(x, y) {
     this.position = {
@@ -67,13 +66,21 @@ class Platform {
     this.height = proportionalSize(40);
   }
   draw() {
-    ctx.fillStyle = "#acd157"
-    ctx.fillRect(this.position.x, this.position.y, this.width,this.height)
+    ctx.fillStyle = "#acd157";
+    ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 }
 
-
 const player = new Player();
+
+
+const platformPositions = [
+  {
+    x : 500,
+    y : proportionalSize(450)
+  }
+];
+
 
 const animate = () => {
   requestAnimationFrame(animate);
