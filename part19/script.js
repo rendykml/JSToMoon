@@ -31,12 +31,19 @@ class Player {
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
   
-
   update() {
     this.draw();
     this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y
-  }
+    this.position.y += this.velocity.y;
 
+
+    if (this.position.y + this.height + this.velocity.y <= canvas.height) {
+      if (this.position.y < 0) {
+        this.position.y = 0
+      }
+    }
+
+
+  }
 
 }
