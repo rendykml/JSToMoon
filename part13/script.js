@@ -30,7 +30,7 @@ class Player {
     ctx.fillStyle = "#99c9ff";
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
-  
+
   update() {
     this.draw();
     this.position.x += this.velocity.x;
@@ -134,7 +134,15 @@ const animate = () => {
       return;
     }
 
-const platformDetectionRules = []
+
+    const platformDetectionRules = [
+      player.position.x >= platform.position.x - player.width / 2,
+      player.position.x <=
+        platform.position.x + platform.width - player.width / 3,
+      player.position.y + player.height >= platform.position.y,
+      player.position.y <= platform.position.y + platform.height
+    ];
+
   });
 
 }
