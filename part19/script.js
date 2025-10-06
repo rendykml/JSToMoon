@@ -71,9 +71,18 @@ class Platform {
   }
 }
 
-class CheckPoint{
-  
-}
+
+class CheckPoint {
+  constructor(x, y, z) {
+    this.position = {
+      x,
+      y,
+    };
+    this.width = proportionalSize(40);
+    this.height = proportionalSize(70)
+  };
+};
+
 
 const player = new Player();
 
