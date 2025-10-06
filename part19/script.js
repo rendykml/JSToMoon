@@ -193,6 +193,12 @@ const animate = () => {
       player.velocity.y = gravity;
     };
   });
+
+
+  checkpoints.forEach((checkpoint, index, checkpoints) => {
+
+  });
+
 }
 
 
@@ -240,11 +246,13 @@ const startGame = () => {
   animate();
 }
 
-
 const showCheckpointScreen = (msg) => {
-
+  checkpointScreen.style.display = "block";
+  checkpointMessage.textContent = msg;
+  if (isCheckpointCollisionDetectionActive) {
+    setTimeout(() => (checkpointScreen.style.display = "none"), 2000);
+  }
 };
-
 
 startBtn.addEventListener("click", startGame);
 
