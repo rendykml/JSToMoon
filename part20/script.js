@@ -16,7 +16,7 @@ let score = 0;
 let round = 1; 
 let rolls = 0; 
   rollDiceBtn.addEventListener("click", ()=>{
-    diceValuesArr = []
+    diceValuesArr = 
     for(let i = 0; i < 5; i++){
       diceValuesArr.push(Math.floor(Math.random() * 6)+1)
     }
