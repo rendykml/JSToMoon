@@ -13,8 +13,8 @@ const rulesBtn = document.getElementById("rules-btn");
 let diceValuesArr = [];
 let isModalShowing = false;
 let score = 0;
-let round = 1; 
-let rolls = 0; 
+let round = 1;
+let rolls = 0;
 
 const rollDice = () => {
   diceValuesArr = [];
@@ -40,16 +40,40 @@ const updateRadioOption = (index, score) => {
   scoreSpans[index].textContent = `, score = ${score}`;
 };
 
+
+const getHighestDuplicates = (diceArr)=>{
+  const counts = {}
+  let sum  = 0;
+
+  diceArr.forEach((num)=>{
+    sum += num
+    counts[num] = (counts[num]||0) + 1
+  })
+
+   const hasFourOfKind = Object.values(counts).some(count => count >= 4);
+  const hasThreeOfKind = Object.values(counts).some(count => count >= 3); 
+  
+  if (hasFourOfKind && hasThreeOfKind) {
+    updateRadioOption(1, sum); 
+    updateRadioOption(0, sum); 
+  } else if (hasThreeOfKind) {
+    updateRadioOption(0, sum); 
+  } else {
+    updateRadioOption(5, 0); 
+}
+}
+
 rollDiceBtn.addEventListener("click", () => {
-  if (rolls === 3) {
-    alert("You have made three rolls this round. Please select a score.")
-    updateRadioOption(1,1)
+  if (rolls === 100) {
+    alert("You have made three rolls this round. Please select a score.");
   } else {
     rolls++;
     rollDice();
     updateStats();
+    getHighestDuplicates(diceValuesArr);
   }
 });
+
 
 rulesBtn.addEventListener("click", () => {
   isModalShowing = !isModalShowing;
