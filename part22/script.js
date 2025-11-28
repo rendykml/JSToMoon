@@ -24,10 +24,13 @@ const forumCategory = (id) => {
 
     selectedCategory.className = className;
     selectedCategory.category = category;
-  } else{
-    
+  } else {
+    selectedCategory.className = "general";
+    selectedCategory.category = "General";
+    selectedCategory.id = 1;
   }
-
+  const url = `${forumCategoryUrl}${selectedCategory.className}/${id}`;
+const linkText = selectedCategory.category
 };
 
 const timeAgo = (time) => {
