@@ -1,0 +1,1 @@
+const regex = /^\d\d\d\d$/;
