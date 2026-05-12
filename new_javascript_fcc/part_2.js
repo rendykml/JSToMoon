@@ -62,3 +62,46 @@ console.log(start.test("i love freecodecamp")); // false
 console.log(end.test("i love freecodecamp")); // true
 console.log(start.test("have met freecodecamp's founder")); // false
 console.log(end.test("have met freecodecamp's founder")); // false
+
+// --------------------------------------- //
+const start = /^freecodecamp/i;
+const end = /freecodecamp$/i;
+const string = `I really love
+freecodecamp
+it's my favorite`;
+console.log(start.test(string)); // false
+console.log(end.test(string)); // false
+
+const start = /^freecodecamp/im;
+const end = /freecodecamp$/im;
+const string = `I really love
+freecodecamp
+it's my favorite`;
+console.log(start.test(string)); // true
+console.log(end.test(string)); // true
+
+//---------------------------------------- //
+const regex = /freecodecamp/;
+const str = "freecodecamp is the best we love freecodecamp";
+const matched = str.match(regex);
+const replaced = str.replace(regex, "freeCodeCamp");
+console.log(matched);
+console.log(replaced);
+//result
+// [
+//   'freecodecamp',
+//   index: 0,
+//   input: 'freecodecamp is the best we love freecodecamp',
+//   groups: undefined
+// ]
+// freeCodeCamp is the best we love freecodecamp
+
+const regex = /freecodecamp/g;
+const str = "freecodecamp is the best we love freecodecamp";
+const matched = str.match(regex);
+const replaced = str.replace(regex, "freeCodeCamp");
+console.log(matched);
+console.log(replaced);
+//result
+// [ 'freecodecamp', 'freecodecamp' ]
+// freeCodeCamp is the best we love freeCodeCamp
