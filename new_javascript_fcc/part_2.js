@@ -105,3 +105,28 @@ console.log(replaced);
 //result
 // [ 'freecodecamp', 'freecodecamp' ]
 // freeCodeCamp is the best we love freeCodeCamp
+
+const pattern = "freecodecamp";
+const str = "freecodecamp is the best we love freecodecamp";
+const matched = str.matchAll(pattern);
+const replaced = str.replaceAll(pattern, "freeCodeCamp");
+console.log(matched);
+console.log(replaced);
+
+const regex = /freecodecamp/g;
+const str = "freecodecamp is the best we love freecodecamp";
+const matched = str.matchAll(regex);
+console.log(Array.from(matched));
+// [
+//   'freecodecamp',
+//   index: 0,
+//   input: 'freecodecamp is the best we love freecodecamp',
+//   groups: undefined
+// ]
+//
+// [
+//   'freecodecamp',
+//   index: 33,
+//   input: 'freecodecamp is the best we love freecodecamp',
+//   groups: undefined
+// ]
